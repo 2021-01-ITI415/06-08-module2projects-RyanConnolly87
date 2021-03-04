@@ -33,15 +33,15 @@ public class Prospector : MonoBehaviour {
 		drawPile = ConvertListCardsToListCardProspectors(deck.cards);
 	}
 
-	List<CardProspector> ConvertListCardsToListCardProspectors(List<Card> 1CD) {
+	List<CardProspector> ConvertListCardsToListCardProspectors(List<Card> ICD) {
 
-		List < CardProspector > 1CP = new List<CardProspector>();
+		List < CardProspector > ICP = new List<CardProspector>();
 		CardProspector tCP;
-		foreach (Card tCD in 1CD){
+		foreach (Card tCD in ICD){
 			tCP = tCD as CardProspector;
-			1CP.Add(tCP);
+			ICP.Add(tCP);
 		}
-		return (1CP );
+		return (ICP );
 	}
 	
 }
