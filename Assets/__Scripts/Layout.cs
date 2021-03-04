@@ -42,7 +42,7 @@ public class Layout : MonoBehaviour
         SlotDef tSD;
         PT_XMLHashList slotsX = xml["slot"];
 
-        for (int i=0, i<slotsX.Count; i++)
+        for (int i=0; i < slotsX.Count; i++)
         {
             tSD = new SlotDef();
             if (slotsX[i].HasAtt("type"))

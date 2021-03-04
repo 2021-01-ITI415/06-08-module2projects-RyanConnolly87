@@ -25,9 +25,10 @@ public class Prospector : MonoBehaviour {
 	void Start() {
 		deck = GetComponent<Deck> ();
 		deck.InitDeck (deckXML.text);
+		
 
-		layout = GetComponent<layout>();
-		layout.ReadyLayout(layoutXML.text);
+		layout = GetComponent<Layout>();
+		layout.ReadLayout(layoutXML.text);
 	}
 
 }
