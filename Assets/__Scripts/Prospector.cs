@@ -32,16 +32,16 @@ public class Prospector : MonoBehaviour {
 		layout.ReadLayout(layoutXML.text);
 		drawPile = ConvertListCardsToListCardProspectors(deck.cards);
 	}
-	
-	List<CardProspector> ConvertListCardsToListCardProspectors(List<Card> 1CD)
-    {
-		List<CardProspector> 1CP = new List<CardProspector>();
+
+	List<CardProspector> ConvertListCardsToListCardProspectors(List<Card> 1CD) {
+
+		List < CardProspector > 1CP = new List<CardProspector>();
 		CardProspector tCP;
-		foreach(Card tCD in 1CD){
+		foreach (Card tCD in 1CD){
 			tCP = tCD as CardProspector;
 			1CP.Add(tCP);
-        }
-		return( 1CP );
-    }
+		}
+		return (1CP );
+	}
 	
 }
