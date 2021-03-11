@@ -71,12 +71,12 @@ public class Prospector : MonoBehaviour {
 		deck.InitDeck (deckXML.text);
 		Deck.Shuffle(ref deck.cards);
 
-		Card c;
-		for(int cNum=0; cNum<deck.cards.Count; cNum++)
-        {
-			c = deck.cards[cNum];
-			c.transform.localPosition = new Vector3((cNum % 13) * 3, cNum / 13 * 4, 0);
-        }
+		//Card c;
+		//for(int cNum=0; cNum<deck.cards.Count; cNum++)
+        //{
+		//	c = deck.cards[cNum];
+		//	c.transform.localPosition = new Vector3((cNum % 13) * 3, cNum / 13 * 4, 0);
+        //}
 		
 
 		layout = GetComponent<Layout>();
@@ -240,7 +240,14 @@ public class Prospector : MonoBehaviour {
 				tableau.Remove(cd);
 				MoveToTarget(cd);
 				SetTableauFaces();
-				ScoreManager.EVENT(eScoreEvent.mine);
+				if (cd.isGold)
+                {
+					ScoreManager.EVENT(eScoreEvent.mineGold);
+                }
+                else
+                {
+					ScoreManager.EVENT(eScoreEvent.mine);
+				}
 				FloatingScoreHandler(eScoreEvent.mine);
 				break;
         }
@@ -251,6 +258,7 @@ public class Prospector : MonoBehaviour {
 		if (tableau.Count == 0)
         {
 			GameOver(true);
+			return;
         }
 		if (drawPile.Count > 0)
         {
