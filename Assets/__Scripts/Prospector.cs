@@ -19,6 +19,7 @@ public class Prospector : MonoBehaviour {
 	public Vector2 fsPosRun = new Vector2(0.5f, 0.75f);
 	public Vector2 fsPosMid2 = new Vector2(0.4f, 1.0f);
 	public Vector2 fsPosEnd = new Vector2(0.5f, 0.95f);
+	public float reloadDelay = 2f;
 
 
 	[Header("Set Dynamically")]
@@ -249,8 +250,14 @@ public class Prospector : MonoBehaviour {
 			ScoreManager.EVENT(eScoreEvent.gameLoss);
 			FloatingScoreHandler(eScoreEvent.gameLoss);
 		}
+		//SceneManager.LoadScene("prospector");
+		Invoke("ReloadLevel", reloadDelay);
+    }
+	void ReloadLevel()
+    {
 		SceneManager.LoadScene("prospector");
     }
+
 	public bool AdjacentRank(CardProspector c0, CardProspector c1)
     {
 		if (!c0.faceUp || !c1.faceUp) return (false);
