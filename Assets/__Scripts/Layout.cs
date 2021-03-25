@@ -28,7 +28,7 @@ public class Layout : MonoBehaviour
     public List<SlotDef> slotDefs;
     public SlotDef drawPile;
     public SlotDef discardPile;
-    public string[] sortingLayerNames = new string[] { "Row0", "Row1", "Row2", "Row3", "Discard", "Draw" };
+    public string[] sortingLayerNames = new string[] { "SlotMiddle", "Slot1", "Slot2", "Slot3", "Slot4", "Slot5", "Slot6", "Slot7", "Slot8", "Slot9", "Slot10", "Slot11", "Slot12" };
    
     public void ReadLayout( string xmlText)
     {
